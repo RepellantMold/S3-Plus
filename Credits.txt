@@ -1,0 +1,5 @@
+FredBronze - Sonic 3 Unlocked blog
+Flamewing - DPLC error during level transition fix
+Clownacy - ASM versions of Sonic 3 prototype songs
+Hidden Palace - Release of the Sonic 3 prototype.
+The Cutting Room Floor - Documentation of unused graphics (which I removed).

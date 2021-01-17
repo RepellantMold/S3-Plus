@@ -1,0 +1,56 @@
+; ---------------------------------------------------------------------------
+; Version 1.0
+; ---------------------------------------------------------------------------
+
+Changes:
+ - Removed all "& Knuckles" branding from the game.
+ - The correct sound effect is now played when transforming in Doomsday Zone.
+ - Super Sonic's full idle animation has been restored.
+ - Super Sonic's balancing animation now has a more smooth loop.
+ - Super Sonic's full palette cycle has been restored.
+ - The correct music now plays when returning from a giant ring in AIZ1 or the pre-boss checkpoint in ICZ1.
+ - Sonic 3 credits theme now replaces the ending medley.
+ - Knuckles' Mushroom Hill Zone demo from Sonic & Knuckles has been restored.
+ - Renamed some entries on the stage select.
+ - Turning Super no longer interrupts the boss themes.
+ - Knuckles' Marble Garden Act 2 boss now plays the correct music.
+ - Entering Hidden Palace Zone from Lava Reef no longer restarts the music.
+ - Restored Big Arms for Sonic and Tails.
+ - Fixed an animation error for Tails when beating LBZ2 alone.
+ - Fixed the player entering the standing animation upon beating Big Arms.
+ - Knuckles palette in cutscenes is now mostly consistent (aside from his yellow socks since that color is used by the HUD and rings)
+ - Restored all Sonic 3 Alone tracks.
+ - Sonic 3 invincibility drums are now consistent with that of the Sonic & Knuckles Collection.
+ - Sky Sanctuary's main melody no longer gets interrupted.
+ - Restored all prototype songs (minus the unused theme).
+ - Restored Sonic 3 all Chaos Emeralds cheat (2, 4, 5, 6 on level select sound test) and added a Super Emerald cheat ($12, $14, $15, $16).
+ - Fixed bugged palette when transforming twice in the same level.
+ - Updated some of Sonic's and Tails' sprites to be more on model (use Sonic 3 style, black soles).
+ - Chrome Gadget's background is now brighter, restoring previously lost details.
+ - The Green Hill Zone and Metropolis Zone bosses now play the miniboss theme.
+ - Sonic 3-style Special Stage results background (completely white instead of gray).
+ - Fixed improper colors at the beginning of HCZ1.
+ - Fixed shoddy object placement in HCZ1 and LBZ1, which can causes bugs for Tails.
+ - Restored the Sonic 3 Gumball bonus stage to the level select.
+ - Fixed loopbacks.
+ - Flying Battery Zone's songs are now correctly ordered in the level select (after MHZ instead of CNZ).
+ - Sonic & Knuckles continue screen is now used for Sonic alone.
+ - The grayscale Competition Menu icon palette is now correct (previously, it had a black where a light gray should be, making the icons look incorrect).
+ - Fixed incorrect collision height when roll jumping.
+ - Camera now longer jerks up when rolling as Tails.
+ - Tails' tails now flash when he's hurt.
+ - Fixed a bug where entering Debug Mode in Competition Mode would make shit hit the fan.
+ - Optimized layouts to removed unused/misplaced segments/objects.
+ - Altered Tails' section of Death Egg Zone Act 1 so that if Sonic enters it, he can beat it.
+ - DMA queue is now properly cleared at the beginning of a level.
+ - Sonic & Knuckles ending jingle used when getting the best ending.
+ - Fixed the first Launch Base Zone Act 2 boss having the wrong platform palette when beaten.
+ - Restored Knuckles' laughing animation during the Lava Reef Zone Act 2 cutscene.
+ - Fixed backwards Tails jump animation.
+
+UTH Changes:
+ - Combined all icon art on the save selection screen.
+ - All Sonic 3 levels now use the Sonic & Knuckles collision format.
+ - Manually reinstered Sonic 3 data and removed all redundancies to save space.
+ - Removed a bunch of unused data to save space.
+ - Fixed busted register uses.
