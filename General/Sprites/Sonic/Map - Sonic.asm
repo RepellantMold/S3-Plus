@@ -1177,16 +1177,16 @@ word_14751C:	dc.w 2
 		dc.b  $F0,  $E,	  0,   3, $FF, $F0
 word_14752A:	dc.w 5			
 					
-		dc.b  $E8,  $D,	  0,   0, $FF, $F2
 		dc.b  $E8,   4,	  0,   8, $FF, $F7
 		dc.b  $F0,   9,	  0,  $A, $FF, $F7
+		dc.b  $E8,  $D,	  0,   0, $FF, $F2
 		dc.b	0,   5,	  0, $10, $FF, $F7
 		dc.b  $10,   8,	  0, $14, $FF, $F7
 word_14754A:	dc.w 5			
 					
-		dc.b  $E8,   8,	  0,   0, $FF, $F6
 		dc.b  $E8,   4,	  0,   3, $FF, $F7
 		dc.b  $F0,   9,	  0,   5, $FF, $F7
+		dc.b  $E8,   8,	  0,   0, $FF, $F6
 		dc.b	0,   5,	  0,  $B, $FF, $F7
 		dc.b  $10,   8,	  0,  $F, $FF, $F7
 word_14756A:	dc.w 1			

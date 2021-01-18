@@ -1,4 +1,16 @@
 ; ---------------------------------------------------------------------------
+; Version 1.01
+; ---------------------------------------------------------------------------
+
+Changes:
+ - Removed a bit more data.
+ - Redrew a few more of Sonic's sprites.
+
+Disassembly Changes:
+ - Replaced some SK labels with S2 labels, because SK labels suck.
+ - Removed leftovers from Sonic 3 Alone and Sonic & Knuckles Alone.
+
+; ---------------------------------------------------------------------------
 ; Version 1.0
 ; ---------------------------------------------------------------------------
 
