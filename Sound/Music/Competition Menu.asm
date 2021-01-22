@@ -2,7 +2,7 @@ Snd_2PMenu_Header:
 	smpsHeaderStartSong 3, 1
 	smpsHeaderVoiceUVB
 	smpsHeaderChan      $06, $03
-	smpsHeaderTempo     $01, $25
+	smpsHeaderTempo     $01, $24
 
 	smpsHeaderDAC       Snd_2PMenu_DAC
 	smpsHeaderFM        Snd_2PMenu_FM1,	$18, $0F

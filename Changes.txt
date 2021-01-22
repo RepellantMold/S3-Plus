@@ -1,4 +1,16 @@
 ; ---------------------------------------------------------------------------
+; Version 1.02
+; ---------------------------------------------------------------------------
+
+Changes:
+ - Recompressed some more data to optimize ROM size.
+ - Fixed Super Sonic ring count going down every 61 frames instead of 60.
+ - Deleted a few more Sonic 3 Alone leftovers.
+ - Optimized the code to handle the Hyper palette.
+ - Nagivgating the competition menu no longer resets the music.
+ - Readjusted the volume levels for some prototype songs.
+
+; ---------------------------------------------------------------------------
 ; Version 1.01
 ; ---------------------------------------------------------------------------
 

@@ -10,8 +10,8 @@ Snd_LBZ1_Header:
 	smpsHeaderFM        Snd_LBZ1_FM3,	$00, $17
 	smpsHeaderFM        Snd_LBZ1_FM4,	$00, $19
 	smpsHeaderFM        Snd_LBZ1_FM5,	$00, $19
-	smpsHeaderPSG       Snd_LBZ1_PSG1,	$00, $05, $00, sTone_0C
-	smpsHeaderPSG       Snd_LBZ1_PSG2,	$00, $05, $00, sTone_0C
+	smpsHeaderPSG       Snd_LBZ1_PSG1,	$00, $03, $00, sTone_0C
+	smpsHeaderPSG       Snd_LBZ1_PSG2,	$00, $03, $00, sTone_0C
 	smpsHeaderPSG       Snd_LBZ1_PSG3,	$00, $03, $00, sTone_0C
 
 ; DAC Data

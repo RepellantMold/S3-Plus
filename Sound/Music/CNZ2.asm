@@ -2,7 +2,7 @@ Snd_CNZ2_Header:
 	smpsHeaderStartSong 3, 1
 	smpsHeaderVoiceUVB
 	smpsHeaderChan      $06, $03
-	smpsHeaderTempo     $01, $25
+	smpsHeaderTempo     $01, $2A
 
 	smpsHeaderDAC       Snd_CNZ2_DAC
 	smpsHeaderFM        Snd_CNZ2_FM1,	$0C, $13
