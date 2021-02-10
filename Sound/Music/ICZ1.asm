@@ -142,9 +142,10 @@ Snd_ICZ1_FM5:
 
 ; DAC Data
 Snd_ICZ1_DAC:
-	dc.b	dMuffledSnare, $07, dMuffledSnare, nRst, $04
-	smpsLoop	$00, $05, Snd_ICZ1_DAC
-	dc.b	$05, dMuffledSnare, $04, nRst, $14, dKickS3, $04, nRst, $10, dMuffledSnare, $04
+	dc.b	dMuffledSnare, $04, nRst, dMuffledSnare, nRst, $08, dMuffledSnare, $04, dMuffledSnare, nRst, $08, dMuffledSnare
+	dc.b	$04, nRst, dMuffledSnare, nRst, $08, dMuffledSnare, $04, dMuffledSnare, nRst, $08, dMuffledSnare, $04
+	dc.b	nRst, $08, dMuffledSnare, $04, nRst, $08
+	dc.b	dMuffledSnare, $04, nRst, $14, dKickS3, $04, nRst, $10, dMuffledSnare, $04
 	dc.b	dMuffledSnare, $04, nRst, dMuffledSnare, nRst, $08, dMuffledSnare, $04, dMuffledSnare, nRst, dMuffledSnare, dMuffledSnare
 	dc.b	nRst, dMuffledSnare
 
