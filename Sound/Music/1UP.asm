@@ -88,25 +88,6 @@ Snd_1UP_PSG3:
 	smpsPSGAlterVol     $04
 	dc.b	nMaxPSG2, $03, nMaxPSG2
 	smpsPSGAlterVol     $FC
-	dc.b	nMaxPSG2, $03, nMaxPSG2
-	smpsPSGAlterVol     $04
-	dc.b	nMaxPSG2, $03, nMaxPSG2
-	smpsPSGAlterVol     $FC
-	dc.b	nMaxPSG2, $03, nMaxPSG2
-	smpsPSGAlterVol     $04
-	dc.b	nMaxPSG2, $03, nMaxPSG2
-	smpsPSGAlterVol     $FC
-	dc.b	nMaxPSG2, $03, nMaxPSG2
-	smpsPSGAlterVol     $04
-	dc.b	nMaxPSG2, $03, nMaxPSG2
-	smpsPSGAlterVol     $FC
-	dc.b	nMaxPSG2, $03, nMaxPSG2
-	smpsPSGAlterVol     $04
-	dc.b	nMaxPSG2, $03, nMaxPSG2
-	smpsPSGAlterVol     $FC
-	dc.b	nMaxPSG2, $03, nMaxPSG2
-	smpsPSGAlterVol     $04
-	dc.b	nMaxPSG2, $0C
 	smpsStop
 
 ; DAC Data

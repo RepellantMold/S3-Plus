@@ -5,13 +5,13 @@ Snd_2PMenu_Header:
 	smpsHeaderTempo     $01, $24
 
 	smpsHeaderDAC       Snd_2PMenu_DAC
-	smpsHeaderFM        Snd_2PMenu_FM1,	$18, $0F
-	smpsHeaderFM        Snd_2PMenu_FM2,	$0C, $18
+	smpsHeaderFM        Snd_2PMenu_FM1,	$18, $09
+	smpsHeaderFM        Snd_2PMenu_FM2,	$0C, $0F
 	smpsHeaderFM        Snd_2PMenu_FM3,	$0C, $13
 	smpsHeaderFM        Snd_2PMenu_FM4,	$0C, $13
 	smpsHeaderFM        Snd_2PMenu_FM5,	$0C, $1A
-	smpsHeaderPSG       Snd_2PMenu_PSG1,	$F4, $08, $00, sTone_0C
-	smpsHeaderPSG       Snd_2PMenu_PSG2,	$F4, $06, $00, sTone_0C
+	smpsHeaderPSG       Snd_2PMenu_PSG1,	$F4, $04, $00, sTone_0C
+	smpsHeaderPSG       Snd_2PMenu_PSG2,	$F4, $04, $00, sTone_0C
 	smpsHeaderPSG       Snd_2PMenu_PSG3,	$00, $03, $00, sTone_0C
 
 ; DAC Data
@@ -106,11 +106,11 @@ Snd_2PMenu_Jump04:
 
 ; FM5 Data
 Snd_2PMenu_FM5:
-	dc.b	nRst, $03
+	dc.b	nRst, $07
 
 ; FM2 Data
 Snd_2PMenu_FM2:
-	smpsSetvoice        $0F
+	smpsSetvoice        $08
 	smpsDetune          $03
 	smpsModSet          $0F, $01, $06, $06
 	dc.b	$30
@@ -150,21 +150,12 @@ Snd_2PMenu_Jump03:
 	dc.b	$06, nG4, nBb4, nC5, nRst, nD5, $02, nEb5, $0A, nD5, $04, nRst
 	dc.b	$02, nC5, $06, nBb4, nC5, $0C, nBb4, $02, nG4, nF4, nEb4, nC4
 	dc.b	nBb3
-	smpsSetvoice        $0E
-	smpsDetune          $00
-	smpsModSet          $0F, $01, $06, $06
 	dc.b	nEb5, $06, nF5, $0A, nRst, $02, nEb5, $06, nFs5, $0C, nEb5, $06
 	dc.b	nA5, $02, nBb5, $0A, nF5, $06, nEb5, nC5, nEb5, nC5, nBb4, nC5
 	dc.b	nBb4, nG4, nBb4, nG4, nF4, nG4, nF4, nEb4, nF4, nEb4, nC4, nEb4
 	dc.b	$12, nC4, $02, nBb3, nG3, nF3, nEb3, nC3
-	smpsSetvoice        $0E
-	smpsDetune          $00
-	smpsModSet          $0F, $01, $06, $06
 	dc.b	nEb4, $12, nFs4, nF4, $28, nRst, $14, nFs4, $02, nG4, $10, nBb4
 	dc.b	$12, nG4, $06, nBb4, nA4, $12, nFs4, $02, nG4, $14, nRst, $08
-	smpsSetvoice        $0E
-	smpsDetune          $00
-	smpsModSet          $0F, $01, $06, $06
 	dc.b	nBb4, $12, nEb5, $1E, nB4, $12, nE5, $1E, nF5, $08, nRst, $10
 	dc.b	nF5, $30, nRst, $06, nF3, nG3, nBb3
 	smpsJump            Snd_2PMenu_Jump03
@@ -232,28 +223,28 @@ Snd_2PMenu_FM4:
 
 Snd_2PMenu_Jump01:
 	dc.b	nD3, $04, nRst, $08, nC3, $06, nD3, $04, nRst, $08
-	smpsSetvoice        $0D
+	smpsSetvoice        $08
 	smpsDetune          $FD
 	smpsModSet          $0F, $01, $06, $06
 	dc.b	nEb4, $0A, nRst, $02, nEb4, $04, nRst, $0E
 	smpsSetvoice        $19
 	dc.b	nEb3, $02, nRst, $0A, nD3, $04, nRst, $02, nEb3, $12, nD3, $04
 	dc.b	nRst, $08, nC3, $06, nD3, $04, nRst, $08
-	smpsSetvoice        $0D
+	smpsSetvoice        $08
 	smpsDetune          $FD
 	smpsModSet          $0F, $01, $06, $06
 	dc.b	nEb4, $0A, nRst, $02, nEb4, $04, nRst, $0E
 	smpsSetvoice        $19
 	dc.b	nG3, $02, nRst, $10, nG3, $0A, nRst, $08, nD3, $04, nRst, $08
 	dc.b	nC3, $06, nD3, $04, nRst, $08
-	smpsSetvoice        $0D
+	smpsSetvoice        $08
 	smpsDetune          $FD
 	smpsModSet          $0F, $01, $06, $06
 	dc.b	nEb4, $0A, nRst, $02, nEb4, $04, nRst, $0E
 	smpsSetvoice        $19
 	dc.b	nEb3, $02, nRst, $0A, nD3, $04, nRst, $02, nEb3, $12, nD3, $04
 	dc.b	nRst, $08, nC3, $06, nD3, $04, nRst, $08
-	smpsSetvoice        $0D
+	smpsSetvoice        $08
 	smpsDetune          $FD
 	smpsModSet          $0F, $01, $06, $06
 	dc.b	nEb4, $0A, nRst, $02, nEb4, $04, nRst, $0E
@@ -306,7 +297,6 @@ Snd_2PMenu_Jump01:
 
 ; PSG1 Data
 Snd_2PMenu_PSG1:
-	smpsPan		panRight, $00
 	dc.b	$30
 
 Snd_2PMenu_Jump06:
@@ -379,13 +369,12 @@ Snd_2PMenu_Jump06:
 
 ; PSG2 Data
 Snd_2PMenu_PSG2:
-	smpsPan		panRight, $00
 	dc.b	$32
 	smpsJump            Snd_2PMenu_Jump06
 
 ; PSG3 Data
 Snd_2PMenu_PSG3:
-	smpsPSGvoice        sTone_02
+	smpsPSGvoice        sTone_01
 	smpsPSGform         $E7
 	dc.b	$30
 

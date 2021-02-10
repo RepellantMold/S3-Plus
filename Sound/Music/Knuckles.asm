@@ -11,12 +11,8 @@ Snd_Knux_Header:
 	smpsHeaderFM        Snd_Knux_FM4,	$00, $0E
 	smpsHeaderFM        Snd_Knux_FM5,	$00, $0E
 	smpsHeaderPSG       Snd_Knux_PSG1,	$F4, $05, $00, $00
-	smpsHeaderPSG       Snd_Knux_PSG2,	$00, $00, $00, $00
+	smpsHeaderPSG       Snd_Knux_PSG2,	$F4, $04, $00, $00
 	smpsHeaderPSG       Snd_Knux_PSG3,	$00, $FE, $00, sTone_03
-
-; PSG2 Data
-Snd_Knux_PSG2:
-	smpsStop
 
 ; FM1 Data
 Snd_Knux_FM1:
@@ -172,6 +168,9 @@ Snd_Knux_Jump00:
 ; PSG1 Data
 Snd_Knux_PSG1:
 	dc.b	nRst, $02
+	
+; PSG2 Data
+Snd_Knux_PSG2:
 	smpsPSGvoice        sTone_09
 
 Snd_Knux_Jump05:

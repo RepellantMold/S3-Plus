@@ -12,7 +12,7 @@ Snd_BPZ_Header:
 	smpsHeaderFM        Snd_BPZ_FM5,	$00, $0B
 	smpsHeaderPSG       Snd_BPZ_PSG1,	$F4, $03, $00, $00
 	smpsHeaderPSG       Snd_BPZ_PSG2,	$F4, $03, $00, $00
-	smpsHeaderPSG       Snd_BPZ_PSG3,	$00, $00, $00, $00
+	smpsHeaderPSG       Snd_BPZ_PSG3,	$18, $00, $00, $00
 
 ; FM1 Data
 Snd_BPZ_FM1:
@@ -356,8 +356,8 @@ Snd_BPZ_Loop09:
 
 ; PSG3 Data
 Snd_BPZ_PSG3:
-	smpsStop
-
+	smpsPSGvoice        sTone_01
+	smpsPSGform         $E7
 Snd_BPZ_Jump05:
 	dc.b	nRst, $30, nRst, nRst, nRst, nRst, nRst, nRst, nRst, nBb4, $05, nRst
 	dc.b	$13, nBb4, $04, nRst, $02, nBb4, $04, nRst, $0E, nBb4, $05, nRst

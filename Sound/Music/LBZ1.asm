@@ -39,7 +39,7 @@ Snd_LBZ1_Jump00:
 
 ; FM1 Data
 Snd_LBZ1_FM1:
-	smpsSetvoice        $0A
+	smpsSetvoice        $03
 	smpsDetune          $FC
 	smpsModSet          $0F, $01, $06, $06
 	smpsCall            Snd_LBZ1_Call04
@@ -158,17 +158,15 @@ Snd_LBZ1_Call05:
 
 ; FM2 Data
 Snd_LBZ1_FM2:
-	smpsSetvoice        $0A
+	smpsSetvoice        $06
 	smpsDetune          $04
 	smpsModSet          $0F, $01, $06, $06
 	smpsCall            Snd_LBZ1_Call02
-	smpsSetvoice        $0A
-	smpsDetune          $04
-	smpsModSet          $0F, $01, $06, $06
+	smpsChangeTransposition	12
 
 Snd_LBZ1_Jump04:
-	smpsSetvoice        $0A
-	smpsDetune          $04
+Snd_LBZ1_Jump03:
+	smpsSetvoice        $09
 	smpsModSet          $0F, $01, $06, $06
 	smpsCall            Snd_LBZ1_Call03
 	smpsJump            Snd_LBZ1_Jump04
@@ -235,17 +233,12 @@ Snd_LBZ1_Call03:
 Snd_LBZ1_FM3:
 	dc.b	nRst, $0C
 	smpsFMAlterVol      $06
-	smpsSetvoice        $0A
+	smpsSetvoice        $06
 	smpsDetune          $FC
 	smpsModSet          $0F, $01, $06, $06
 	smpsCall            Snd_LBZ1_Call02
 	smpsFMAlterVol      $02
-	smpsSetvoice        $0A
-	smpsDetune          $FC
-	smpsModSet          $0F, $01, $06, $06
-
-Snd_LBZ1_Jump03:
-	smpsCall            Snd_LBZ1_Call03
+	smpsChangeTransposition	12
 	smpsJump            Snd_LBZ1_Jump03
 
 ; FM4 Data
