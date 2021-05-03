@@ -1,5 +1,6 @@
 FredBronze - Sonic 3 Unlocked blog
-Flamewing - DPLC error during level transition fix
+Flamewing - DPLC error during level transition fix, and debugger
 Clownacy - ASM versions of Sonic 3 prototype songs
 Hidden Palace - Release of the Sonic 3 prototype.
 The Cutting Room Floor - Documentation of unused graphics (which I removed).
+Sik - romfix program from mdtools
