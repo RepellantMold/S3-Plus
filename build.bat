@@ -31,7 +31,6 @@ IF "%1"=="-logerrors" ( IF EXIST sonic3k.log goto LABLERROR3 )
 
 REM // combine the assembler output into a rom
 IF EXIST sonic3k.p "AS\Win32\s3p2bin" sonic3k.p sonic3k.bin sonic3k.h
-romfix.exe -d -r 00 -t "SONIC 3+" -z sonic3k.bin
 
 REM // done -- pause if we seem to have failed, then exit
 :LABLPAUSE
