@@ -1,6 +1,6 @@
 ; Equates section - names for variables
 
-Size_of_Snd_driver_guess = $DA2
+Size_of_Snd_driver_guess = $DA3
 Size_of_Snd_driver2_guess = $671
 ; Approximate size of compressed sound driver. Change when appropriate
 

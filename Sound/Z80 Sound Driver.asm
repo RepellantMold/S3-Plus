@@ -123,7 +123,7 @@ zTrack STRUCT DOTS
 	VoiceSongID:		ds.b 1	; S&K: 0Fh		; For using voices from a different song
 	Detune:			ds.b 1	; S&K: 10h	; In S&K, some places used 11h instead of 10h
 	Unk11h:			ds.b 1	; S&K: 11h
-					ds.b 5	; S&K: 12h-16h	; Unused
+			;		ds.b 5	; S&K: 12h-16h	; Unused
 	VolEnv:				ds.b 1	; S&K: 17h		; Used for dynamic volume adjustments
 	; ---------------------------------
 	; Alternate names for same offsets:
@@ -183,9 +183,9 @@ zDataStart				=	$1C00
 zSpecFM3Freqs				ds.b 8
 zSpecFM3FreqsSFX			ds.b 8
 	endif
-					ds.b 2	; unused
+			;		ds.b 2	; unused
 zPalFlag:			ds.b 1
-					ds.b 1	; unused
+			;		ds.b 1	; unused
 zPalDblUpdCounter:	ds.b 1
 zSoundQueue0:		ds.b 1
 zSoundQueue1:		ds.b 1
@@ -207,13 +207,13 @@ zPauseFlag:			ds.b 1
 zHaltFlag:			ds.b 1
 zFM3Settings:		ds.b 1	; Set twice, never read (is read in Z80 Type 1 for YM timer-related purposes)
 zTempoAccumulator:	ds.b 1
-					ds.b 1	; unused
+			;		ds.b 1	; unused
 unk_1C15			ds.b 1	; Set twice, never read
 zFadeToPrevFlag:	ds.b 1
 unk_1C17:			ds.b 1	; Set once, never read
 unk_1C18:			ds.b 1	; Set twice, never read
 zUpdatingSFX:		ds.b 1
-					ds.b $A	; unused
+			;		ds.b $A	; unused
 zCurrentTempo:		ds.b 1
 zContinuousSFX:		ds.b 1
 zContinuousSFXFlag:	ds.b 1
@@ -229,11 +229,11 @@ zDACIndex:			ds.b 1	; bit 7 = 1 if playing, 0 if not; remaining 7 bits are index
 zContSFXLoopCnt:	ds.b 1	; Used as a loop counter for continuous SFX
 zSFXSaveIndex:		ds.b 1
 zSongPosition:		ds.b 2
-zTrackInitPos:		ds.b 2	; 2 bytes
-zVoiceTblPtr:		ds.b 2	; 2 bytes
-zSFXVoiceTblPtr:	ds.b 2	; 2 bytes
+zTrackInitPos:		ds.w 1	; 2 bytes
+zVoiceTblPtr:		ds.w 1	; 2 bytes
+zSFXVoiceTblPtr:	ds.w 1	; 2 bytes
 zSFXTempoDivider:	ds.b 1
-					ds.b 2	; unused
+			;		ds.b 2	; unused
 zSongBank:			ds.b 1	; Bits 15 to 22 of M68K bank address
 PlaySegaPCMFlag:	ds.b 1
 ; Now starts song and SFX z80 RAM
@@ -4286,7 +4286,7 @@ zPlaySEGAPCM:
 		nop
 		nop
 
-		ld	b, 0Ch							; Loop counter
+		ld	b, 0Ah							; Loop counter
 		djnz	$							; Loop in this instruction, decrementing b each iteration, until b = 0
 
 		inc	hl								; Advance to next byte of SEGA PCM
@@ -5127,9 +5127,9 @@ DAC_AB_Data:			DACBINCLUDE "Sound/DAC/AB.bin"
 DAC_AC_Data:			DACBINCLUDE "Sound/DAC/AC.bin"
 DAC_AD_AE_Data:			DACBINCLUDE "Sound/DAC/AD-AE.bin"
 DAC_AF_Data:			DACBINCLUDE "Sound/DAC/AF.bin"
-Bank3_Filler1:			cnop 	$28E0,soundBankStart
+Bank3_Filler1:		;	cnop 	$28E0,soundBankStart
 DAC_B1_Data:			DACBINCLUDE "Sound/DAC/B1.bin"
-Bank3_Filler2:			cnop 	$3CAD,soundBankStart
+Bank3_Filler2:		;	cnop 	$3CAD,soundBankStart
 DAC_B4_C1_C2_C3_C4_Data:	DACBINCLUDE "Sound/DAC/B4C1-C4.bin"
 DAC_B5_Data:			DACBINCLUDE "Sound/DAC/B5.bin"
 DAC_B6_Data:			DACBINCLUDE "Sound/DAC/B6.bin"
@@ -5159,11 +5159,13 @@ Snd_Invic:		include	"Sound/Music/Invincible.asm"
 Snd_Menu:		include	"Sound/Music/Menu.asm"
 Snd_FinalBoss:		include	"Sound/Music/Final Boss.asm"
 Snd_PresSega:		include	"Sound/Music/Game Complete.asm"
-Snd_CNZ2:		include	"Sound/Music/CNZ2.asm"
-Snd_CNZ1:		include	"Sound/Music/CNZ1.asm"
-Snd_AIZ1:		include	"Sound/Music/AIZ1.asm"
 Snd_Drown:		include	"Sound/Music/Countdown.asm"
 Snd_S3Credits:		include	"Sound/Music/Sonic 3 Credits.asm"
+Snd_Minib_SK:		include	"Sound/Music/Miniboss.asm"
+Snd_Boss:		include	"Sound/Music/Zone Boss.asm"
+Snd_Title:		include	"Sound/Music/Title.asm"
+Snd_Knux:		include	"Sound/Music/Knuckles.asm"
+Snd_1UP:		include	"Sound/Music/1UP.asm"
 	finishBank
 
 ; ---------------------------------------------------------------------------
@@ -5181,16 +5183,7 @@ Snd_LRZ2:		include	"Sound/Music/LRZ2.asm"
 Snd_SSZ:		include	"Sound/Music/SSZ.asm"
 Snd_DEZ1:		include	"Sound/Music/DEZ1.asm"
 Snd_DEZ2:		include	"Sound/Music/DEZ2.asm"
-Snd_Minib_SK:		include	"Sound/Music/Miniboss.asm"
-Snd_Boss:		include	"Sound/Music/Zone Boss.asm"
 Snd_DDZ:		include	"Sound/Music/DDZ.asm"
-Snd_PachBonus:		include	"Sound/Music/Pachinko.asm"
-Snd_SpecialS:		include	"Sound/Music/Special Stage.asm"
-Snd_SlotBonus:		include	"Sound/Music/Slots.asm"
-Snd_Knux:		include	"Sound/Music/Knuckles.asm"
-Snd_Title:		include	"Sound/Music/Title.asm"
-Snd_1UP:		include	"Sound/Music/1UP.asm"
-Snd_Emerald:		include	"Sound/Music/Chaos Emerald.asm"
 	finishBank
 
 ; ---------------------------------------------------------------------------
@@ -5201,7 +5194,6 @@ Snd_HCZ1:		include	"Sound/Music/HCZ1.asm"
 Snd_HCZ2:		include	"Sound/Music/HCZ2.asm"
 Snd_MGZ1:		include	"Sound/Music/MGZ1.asm"
 Snd_MGZ2:		include	"Sound/Music/MGZ2.asm"
-Snd_AIZ2:		include	"Sound/Music/AIZ2.asm"
 Snd_ICZ2:		include	"Sound/Music/ICZ2.asm"
 Snd_ICZ1:		include	"Sound/Music/ICZ1.asm"
 Snd_LBZ2:		include	"Sound/Music/LBZ2.asm"
@@ -5212,7 +5204,6 @@ Snd_LBZ1:		include	"Sound/Music/LBZ1.asm"
 ; Music Bank 4
 ; ---------------------------------------------------------------------------
 Snd_Bank4_Start:	startBank
-Snd_GumBonus:		include	"Sound/Music/Gum Ball Machine.asm"
 Snd_ALZ:		include	"Sound/Music/Azure Lake.asm"
 Snd_BPZ:		include	"Sound/Music/Balloon Park.asm"
 Snd_DPZ:		include	"Sound/Music/Desert Palace.asm"
@@ -5222,14 +5213,31 @@ Snd_2PMenu:		include	"Sound/Music/Competition Menu.asm"
 	finishBank
 
 ; ---------------------------------------------------------------------------
+; Music Bank 5
+; ---------------------------------------------------------------------------
+Snd_Bank5_Start:	startBank
+Snd_AIZ1:		include	"Sound/Music/AIZ1.asm"
+Snd_AIZ2:		include	"Sound/Music/AIZ2.asm"
+Snd_CNZ2:		include	"Sound/Music/CNZ2.asm"
+Snd_CNZ1:		include	"Sound/Music/CNZ1.asm"
+	finishBank
+
+; ---------------------------------------------------------------------------
+; Music Bank 6
+; ---------------------------------------------------------------------------
+Snd_Bank6_Start:	startBank
+Snd_PachBonus:		include	"Sound/Music/Pachinko.asm"
+Snd_SpecialS:		include	"Sound/Music/Special Stage.asm"
+Snd_SlotBonus:		include	"Sound/Music/Slots.asm"
+Snd_GumBonus:		include	"Sound/Music/Gum Ball Machine.asm"
+Snd_Emerald:		include	"Sound/Music/Chaos Emerald.asm"
+	finishBank
+
+; ---------------------------------------------------------------------------
 ; ===========================================================================
 ; Sound Bank
 ; ===========================================================================
 SndBank:			startBank
-
-SEGA_PCM:	binclude "Sound/Sega PCM.bin"
-SEGA_PCM_End
-		align 2
 Sound_33:	include "Sound/SFX/33.asm"
 Sound_34:	include "Sound/SFX/34.asm"
 Sound_35:	include "Sound/SFX/35.asm"
@@ -5400,4 +5408,14 @@ Sound_D9:	include "Sound/SFX/D9.asm"
 Sound_DA:	include "Sound/SFX/DA.asm"
 Sound_DB:	include "Sound/SFX/DB.asm"
 
+	finishBank
+
+; ---------------------------------------------------------------------------
+; ===========================================================================
+; 'SEGA' chant Bank
+; ===========================================================================
+SEGABank:			startBank
+SEGA_PCM:	binclude "Sound/Sega PCM.bin"
+SEGA_PCM_End
+		
 	finishBank

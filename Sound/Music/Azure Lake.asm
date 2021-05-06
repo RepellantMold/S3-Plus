@@ -352,7 +352,6 @@ Snd_ALZ_Jump02:
 
 ; PSG2 Data
 Snd_ALZ_PSG2:
-	smpsStop
 
 ; PSG3 Data
 Snd_ALZ_PSG3:
